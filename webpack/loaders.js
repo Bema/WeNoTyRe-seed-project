@@ -1,4 +1,4 @@
-'use strict';
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.tsx = {
   test: /\.tsx?$/,
@@ -7,7 +7,6 @@ exports.tsx = {
   options: {
     useBabel: true
   }
-
 };
 
 exports.html = {
@@ -18,26 +17,13 @@ exports.html = {
 
 exports.css = {
   test: /\.css$/,
-  use: [
-    'style-loader',
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1
-      }
-    },
-    {
-      loader: 'postcss-loader',
-      options: {
-        plugins: function () {
-          return [
-            require('precss'),
-            require('autoprefixer')
-          ];
-        }
-      }
-    }
-  ],
+  use: ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: [
+      'css-loader',
+      'postcss-loader',
+    ]
+  }),
   exclude: /node_modules/,
 };
 

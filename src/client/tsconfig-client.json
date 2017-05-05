@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
-    "outDir": "build/client",
     "rootDirs": [
       "src/client"
     ],

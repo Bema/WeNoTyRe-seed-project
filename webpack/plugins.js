@@ -1,11 +1,10 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SplitByPathPlugin = require('webpack-split-by-path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const sourceMap = process.env.TEST || process.env.NODE_ENV !== 'production'
   ? [new webpack.SourceMapDevToolPlugin({ filename: null, test: /\.tsx?$/ })]
@@ -25,7 +24,9 @@ const basePlugins = [
 
   new CopyWebpackPlugin([
     { from: 'assets', to: 'assets' },
-  ])
+  ]),
+
+  new ExtractTextPlugin('styles.[hash].css')
 
 ].concat(sourceMap);
 
@@ -42,12 +43,12 @@ const prodPlugins = [
   new SplitByPathPlugin([
     { name: 'vendor', path: [path.resolve('./node_modules')] },
   ]),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false,
-    },
-    sourceMap: true
-  }),
+  // new webpack.optimize.UglifyJsPlugin({
+  //   compress: {
+  //     warnings: false,
+  //   },
+  //   sourceMap: true
+  // }),
 ];
 
 module.exports = basePlugins

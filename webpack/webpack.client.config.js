@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
 
@@ -40,8 +41,6 @@ module.exports = {
     ],
   },
 
-  plugins: plugins,
-
   devServer: {
     hot: true,
     inline: true,
@@ -49,6 +48,8 @@ module.exports = {
     historyApiFallback: { index: '/' },
     proxy: { '/api/*': `http://localhost:3000` },
   },
+
+  plugins: plugins,
 
   module: {
     loaders: [
@@ -63,15 +64,6 @@ module.exports = {
       loaders.json,
     ],
   },
-
-  plugins: [
-    new webpack.DefinePlugin({
-      __DEV__: process.env.NODE_ENV !== 'production',
-      __TEST__: JSON.stringify(process.env.TEST || false),
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.PORT': JSON.stringify(process.env.PORT),
-    }),
-  ]
 
   externals: {
     'react/lib/ReactContext': 'window',

@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
-    "outDir": "build/server",
+    "outDir": "../../build/server",
     "rootDirs": [
       "src/server"
     ],

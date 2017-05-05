@@ -1,5 +1,6 @@
 import * as http from 'http'
 import * as React from 'react'
+import { Provider } from 'react-redux'
 import { renderToString } from 'react-dom/server'
 import { match, StaticRouter } from 'react-router'
 
@@ -15,14 +16,16 @@ const server = http.createServer((req, res) => {
 
   /* tslint:disable */
   const html = renderToString(
-    <StaticRouter location={req.url} context={routerContext}>
-      { routes }
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={routerContext}>
+        { routes }
+      </StaticRouter>
+    </Provider>
   )
   /* tslint:enable */
 
   res.writeHead(200, {'Content-Type': 'text/html'})
-  res.end('<h1>Hello World</h1>')
+  res.end(html)
 })
 
 server.listen(port, () => {
