@@ -4,10 +4,10 @@ This is a work in progress...
 
 This project includes:
 
-1  Webpack
-4  Typescript
-3  NodeJS with Express
-5  React Isomorphic
+1.  Webpack
+2.  Typescript
+3.  NodeJS with Express
+4.  React Isomorphic
 
 
 
