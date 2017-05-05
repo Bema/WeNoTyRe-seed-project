@@ -16,7 +16,7 @@ This project includes:
   * ~~Dev scripts~~
   * ~~Build scripts~~
   * Refactor Scripts (Make it better)
-  * Solve bug with nodemon that fails to start server when file doesn't exist 
+  * Solve bug with nodemon crashing
 
 
 2. ~~Webpack:~~
