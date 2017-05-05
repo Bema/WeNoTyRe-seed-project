@@ -1,0 +1,8 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    align-self: center;
+  }
+}
