@@ -37,7 +37,7 @@ exports.cssNull = {
 
 exports.json = {
   test: /\.json$/,
-  loader: 'json',
+  loader: 'json-loader',
 };
 
 exports.svg = makeUrlLoader(/\.svg$/);
