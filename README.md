@@ -35,12 +35,12 @@ This project includes:
 
 
 4. Client: Webpack with Typescript and React
-  * Dev server with watcher and livereload
+  * ~~Dev server with watcher and livereload~~
   * ~~Prod build to build/client folder~~
   * ~~React~~
   * ~~React Router v4~~
   * ~~Redux~~
-  * Lint
+  * ~~Lint~~
     * ~~Style Lint~~
     * ~~TSLint~~
   * Tests
