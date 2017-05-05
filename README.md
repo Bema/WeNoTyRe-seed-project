@@ -15,6 +15,8 @@ This project includes:
 1. NPM:
   * ~~Dev scripts~~
   * ~~Build scripts~~
+  * Refactor Scripts (Make it better)
+  * Solve bug with nodemon that fails to start server when file doesn't exist 
 
 
 2. ~~Webpack:~~
@@ -26,8 +28,8 @@ This project includes:
 
   * ~~Dev server with watcher~~
   * ~~Prod build to build/server folder~~
-  * Express
-  * Isomorphic React
+  * ~~Express~~
+  * ~~Isomorphic React~~
   * Debug tools
   * ~~Lint~~
     * ~~TSLint~~
