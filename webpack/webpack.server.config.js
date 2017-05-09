@@ -43,8 +43,7 @@ module.exports = {
     loaders: [
       loaders.tsx,
       loaders.html,
-      // loaders.css,
-      loaders.cssNull, // =>  don't load css for server rendering
+      loaders.cssNull, // =>  ignore css imports
       loaders.svg,
       loaders.json,
     ],
