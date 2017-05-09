@@ -39,13 +39,12 @@ app.get('/*', (req, res) => {
   )
   /* tslint:enable */
 
-  res.type('text/html')
-  res.send(200, renderIndexPage(content))
+  res.send(renderIndexPage(content))
 })
 
 app.listen(PORT, () => {
   // tslint:disable-next-line:no-console
-  console.log('SERVER: Listening on http://localhost:' + PORT)
+  console.log(`SERVER: Listening on http://localhost:${PORT}`)
 })
 
 // HELPERS
@@ -54,5 +53,5 @@ function renderIndexPage(content) {
   indexPage('.root')
     .empty()
     .append(content)
-    .htnl()
+    .html()
 }
