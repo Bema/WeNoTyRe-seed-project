@@ -30,7 +30,7 @@
     "emitRequireType": false
   },
   "include": [
-    "./src/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "typings/browser.d.ts",
